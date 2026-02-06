@@ -47,11 +47,12 @@ function LiveMap({ userLocation, deliveryBoyLocation }: Iprops) {
     ? [deliveryBoyLocation.latitude, deliveryBoyLocation.longitude]
     : [userLocation.latitude, userLocation.longitude];
 
+type LatLngTuple = [number, number];
 
     return (
         <div className='w-full h-[500px] rounded-xl overflow-hidden shadow relative z-2'>
-            <MapContainer center={center as any} zoom={13} scrollWheelZoom={true} className="w-full h-full">
-                <Recenter positions={center as any}/>
+            <MapContainer center={center as LatLngTuple} zoom={13} scrollWheelZoom={true} className="w-full h-full">
+                <Recenter positions={center as LatLngTuple}/>
                 <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />

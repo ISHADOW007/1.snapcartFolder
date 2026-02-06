@@ -8,7 +8,7 @@ export async function POST(req:NextRequest) {
     try {
         await connectDb()
         const {roomId}=await req.json()
-        let room=await Order.findById(roomId)
+        const room=await Order.findById(roomId)
         if(!room){
             return NextResponse.json(
             {message:`room not found` },{status:400}

@@ -104,11 +104,12 @@ formData.append("image",backendImage)
                             value={unit}
                             >
                                 <option value="">Select Unit</option>
-                                {units.map(cat => (
-                                    <option value={cat}>{cat}</option>
+                                {units.map((cat,i) => (
+                                    <option key={i} value={cat}>{cat}</option>
                                 ))}
                             </select>
                         </div>
+
                     </div>
                     <div>
                         <label htmlFor="name" className='block text-gray-700 font-medium mb-1'> Price <span className='text-red-500'>*</span></label>
